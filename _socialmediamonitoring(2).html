@@ -24,7 +24,6 @@
   	<link rel="stylesheet" href="styles/css/xenon-components.css">
   	<link rel="stylesheet" href="styles/css/xenon-skins.css">
   	<link rel="stylesheet" href="styles/css/custom.css">
-    <link rel="stylesheet" href="styles/css/launch.css">
 
   </head>
   <body >
@@ -163,7 +162,7 @@
   					<!-- logo -->
   					<div class="logo">
   						<a href="#" class="logo-expanded">
-                <svg viewBox="0 0 1000 270" role="img" aria-labelledby="logo-title" class="logo">
+  							<svg viewBox="0 0 1000 270" role="img" aria-labelledby="logo-title" class="logo">
                     <title id="logo-title">MarketingTool.io</title>
                     <path d="M266.8,159.62l-0.07-38.66l-17.09,33.7h-3.22l-17.02-33.7v38.66h-5.09v-46.9h6.63l17.15,33.77l17.09-33.77h6.57v46.9H266.8z" class="logo__letter"></path>
                     <path d="M307.21,154.19c-2.81,3.82-7.3,5.7-12.93,5.7c-7.3,0-11.99-4.69-11.99-10.79c0-6.16,4.89-10.05,13.2-10.12h11.59v-2.08c0-5.16-3.22-8.24-9.45-8.24c-3.89,0-7.5,1.47-11.19,4.02l-2.21-3.82c4.56-3.02,8.38-4.76,14.41-4.76c8.71,0,13.53,4.62,13.6,12.19l0.07,23.32h-5.09V154.19z M307.14,147.43v-4.22h-10.99c-5.9,0-8.98,1.81-8.98,5.7c0,3.89,3.15,6.43,8.11,6.43C301.24,155.33,305.8,152.32,307.14,147.43z" class="logo__letter"></path>
@@ -221,7 +220,7 @@
   						</a>
   					</li>
   					<li>
-  						<a href="/socialmediamonitoring.html">
+  						<a href="/socialmediamonitoring">
   							<i class="fa fa-tachometer" aria-hidden="true"></i>
   							<span class="title">Social Media Monitoring</span>
   						</a>
@@ -275,28 +274,233 @@
 
           </nav>
   				<!-- MAIN CONTENT -->
-				<div ng-view>
-          <div class="email-octopus-form-wrapper">
-          <h2 class="email-octopus-heading" style="display: none;">Subscribe to MarketingTools</h2>
-          <p class="email-octopus-success-message"></p>
-          <p class="email-octopus-error-message"></p>
-          <form method="post" action="https://emailoctopus.com/lists/05544f35-2994-11e6-8483-02d044452955/members/external-add" class="email-octopus-form" _lpchecked="1">
-          <div class="email-octopus-form-row">
-          <input placeholder="Your email" type="email" name="emailAddress" class="email-octopus-email-address" style="cursor: auto; background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAABHklEQVQ4EaVTO26DQBD1ohQWaS2lg9JybZ+AK7hNwx2oIoVf4UPQ0Lj1FdKktevIpel8AKNUkDcWMxpgSaIEaTVv3sx7uztiTdu2s/98DywOw3Dued4Who/M2aIx5lZV1aEsy0+qiwHELyi+Ytl0PQ69SxAxkWIA4RMRTdNsKE59juMcuZd6xIAFeZ6fGCdJ8kY4y7KAuTRNGd7jyEBXsdOPE3a0QGPsniOnnYMO67LgSQN9T41F2QGrQRRFCwyzoIF2qyBuKKbcOgPXdVeY9rMWgNsjf9ccYesJhk3f5dYT1HX9gR0LLQR30TnjkUEcx2uIuS4RnI+aj6sJR0AM8AaumPaM/rRehyWhXqbFAA9kh3/8/NvHxAYGAsZ/il8IalkCLBfNVAAAAABJRU5ErkJggg=="); background-attachment: scroll; background-size: 16px 18px; background-position: 98% 50%; background-repeat: no-repeat;">
-          </div>
-          <div class="email-octopus-form-row">
-          <input placeholder="First Name" type="text" name="firstName" class="email-octopus-first-name">
-          </div>
-          <div class="email-octopus-form-row-hp">
-          <label>Protecting against bot signups - leave this field blank</label>
-          <input type="text" name="hp05544f35-2994-11e6-8483-02d044452955" autocomplete="off">
-          </div>
-          <div class="email-octopus-form-row-subscribe">
-          <button type="submit">Subscribe</button>
-          </div>
-          </form>
-          </div>
+				  <div class="row">
+         <div class="panel">
+           <div class="panel-header">
+             <div class="input-group input-group-lg input-group-minimal">
+               <span class="input-group-addon"><i class="fa fa-paperclip"></i> <b>Url: </b></span>
+               <input type="text" ng-model="url" name="url" id="url" class="form-control" placeholder="Enter you Webpage Url to see magic!!!">
+             </div>
+           </div>
+           <div class="panel-body">
+             <button class="btn btn-success pull-right url-submitted" onClick="submitShareCount()">Submit</button>
+             <button type="button" class="btn btn-success btn-single pull-right url-submitted hidden"><i class="fa fa-spin fa-gear"></i></button>
+           </div>
+         </div>
+  </div>
+  <div class="row">
+  				<div class="col-sm-3">
+
+  					<div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="121" data-duration="1">
+  						<div class="xe-icon">
+  							<i class="fa fa-share-alt" style="background-color: #3b5998;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="facebook">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Facebook Shares</span>
+  						</div>
+  					</div>
+
+  					<div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="1" data-to="117" data-duration="1" data-easing="false">
+  						<div class="xe-icon">
+  							<i class="fa fa-comments" style="background-color: #3b5998;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="facebook_comment">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Facebook Comments</span>
+  						</div>
+  					</div>
+
+  					<div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="247" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa-thumbs-up" style="background-color: #3b5998;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="facebook_like">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Facebook Like</span>
+  						</div>
+  					</div>
+
+  				</div>
+          
+
+  				<div class="col-sm-3">
+
+            <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="270" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa fa-google-plus" style="background-color: #dc4e41;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="google">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Google Plus Shares</span>
+  						</div>
+  					</div>
+
+            <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="470" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa fa-linkedin " style="background-color: #0077b5;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="linkedIn">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Linkedin Shares</span>
+  						</div>
+  					</div>
+
+            <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="70" data-duration="1" data-easing="true">
+  						<div class="xe-icon">
+  							<i class="fa fa fa-pinterest" style="background-color: #bd081c;"></i>
+  						</div>
+  						<div class="xe-label">
+  							<strong class="num url-submitted" id="pintrest">0</strong>
+							<strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+  							<span>Pinterest Share</span>
+  						</div>
+  					</div>
+
+  				</div>
+				
+				<div class="col-sm-3">
+
+                  <div class="xe-widget xe-counter" data-count=".num" data-from="0" data-to="99" data-duration="1">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-stumbleupon" style="background-color: #eb4924;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="stumbleupon">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Stumbleupon</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-purple" data-count=".num" data-from="1" data-to="117" data-duration="1" data-easing="false">
+                    <div class="xe-icon">
+                      <i class="fa fa-buffer" style="background-color: #168eea;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="buffer">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Buffer</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="145" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa-reddit" style="background-color: #ff4500;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="reddit">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Reddit</span>
+                    </div>
+                  </div>
+
+                </div>
+				
+				<div class="col-sm-3">
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="342" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-odnoklassniki" style="background-color: #ed812b;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="odnoklassniki">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Odnoklassniki</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="333" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-mail_ru" style="background-color: #168de2;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="mail_ru">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Mail_ru</span>
+                    </div>
+                  </div>
+
+                  <div class="xe-widget xe-counter xe-counter-info" data-count=".num" data-from="0" data-to="654" data-duration="1" data-easing="true">
+                    <div class="xe-icon">
+                      <i class="fa fa fa-vk" style="background-color: #45668e;"></i>
+                    </div>
+                    <div class="xe-label">
+                      <strong class="num url-submitted" id="vkontakte">0</strong>
+					  <strong class="url-submitted hidden"><h2><i class="fa fa-spin fa-gear"></i></h2></strong>
+                      <span>Vkontakte</span>
+                    </div>
+                  </div>
+
+                </div>
+				
+  			</div>
+        <div class="row">
+			<div class="col-sm-4">
+
+      			<div class="chart-item-bg">
+					<div class="chart-label">
+						<span class="h3 text-large text-bold"><i class="pull-left fa fa-facebook" style="color: #3b5998;"></i></span>
+						<span class="text-medium text-muted">Facebook Total</span>
+  						<div class="h3 text-bold"  data-count="this" data-from="0.00" data-to="14" data-duration="1" style="color: #3b5998;" id="facebook_total">0</div>
+					</div>
+      			   <div id="facebook-stats" style="height: 365px; padding: 20px 0;"></div>
+				  <div class="chart-footer">
+					<div class="row">
+					  <div class="col-sm-4"><div style="padding: 5px; margin: 5px; height: 5px; width: 5px; background-color: #68b828"></div><span class="text-medium text-muted">Share</span></div>
+					  <div class="col-sm-4"><div style="padding: 5px; margin: 5px; height: 5px; width: 5px; background-color: #7c38bc"></div><span class="text-medium text-muted">Like</span></div>
+					  <div class="col-sm-4"><div style="padding: 5px; margin: 5px; height: 5px; width: 5px; background-color: #0e62c7"></div><span class="text-medium text-muted">Comment</span></div>
+					</div>
+				  </div>
+      			</div>
+      		</div>
+			
+		
+			<div class="col-sm-4">
+                <div class="chart-item-bg">
+                  <div class="chart-label">
+                      <img src="assets/images/MarketingTool.io-black.png" width="180px" alt="">
+                    <div class="h3 text-secondary text-bold"  data-count="this" data-from="0" data-to="14" data-duration="1" id="marketingtoolio_score">Score: 0</div>
+
+                  </div>
+                  <div id="marketingtoolio-stats" style="height: 400px; padding: 40px 0;"></div>
+				  <div class="chart-footer">
+					<div class="row">
+					</div>
+				  </div>
+                </div>
+            </div>
+			
+			<div class="col-sm-4">
+
+                  <div class="chart-item-bg">
+                    <div class="chart-label">
+                        <span class="h3 text-large text-bold"><i class="pull-left fa fa-heart" style="color: red;"></i></span>
+                        <span class="text-medium text-muted">Overall Total</span>
+                      <div class="h3 text-secondary text-bold"  data-count="this" data-from="0" data-to="95" data-duration="1" id="overall-stats">0</div>
+
+                    </div>
+                    <div id="overall-stats-chart" style="height: 400px; padding: 20px 0;"></div>
+					<div class="chart-footer">
+						<div class="row">
+						</div>
+					  </div>
+                  </div>
+            </div>
+			  
         </div>
+
+        <div class="row">
+                
+                
+
+                
+        </div>
+
 				<!-- MAIN CONTENT ENDS -->
 
   			<br />
@@ -352,12 +556,26 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
-
+	
+	<!-- AWS SDK Scripts -->
+    <script type="text/javascript" src="scripts/lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="scripts/lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="scripts/lib/moment/moment.js"></script>
+    <script type="text/javascript" src="scripts/lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="scripts/lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="scripts/apigClient.js"></script>
+    <!-- AWS SDK Scripts Ends-->
+	
     <!-- Imported styles For textarea expanding page -->
   	<link rel="stylesheet" href="styles/fonts/elusive/css/elusive.css">
 
     <!-- Custom Scripts -->
-    <script src="scripts/launch.js"></script>
     <script src="scripts/bootstrap.min.js"></script>
     <script src="scripts/TweenMax.min.js"></script>
     <script src="scripts/resizeable.js"></script>
@@ -371,7 +589,11 @@
   	<script src="scripts/devexpress-web-14.1/js/dx.chartjs.js"></script>
     <!-- Custom Script -->
     <script src="scripts/xenon-custom.js"></script>
-
+	
+	<script type="text/javascript" src="scripts/socialmediaChart.js"></script>
+	<script type="text/javascript" src="scripts/socialmediamonitoring.js"></script>
+  <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+	
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <!-- endbuild -->
 </body>
