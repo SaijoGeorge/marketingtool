@@ -52,3 +52,7 @@ padding-top: 30px !important;
     padding-right: 10px !important;
 }
 }
+
+.fog-container {
+    margin: -30px;
+}
