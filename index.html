@@ -25,6 +25,7 @@
   	<link rel="stylesheet" href="styles/css/xenon-skins.css">
   	<link rel="stylesheet" href="styles/css/custom.css">
     <link rel="stylesheet" href="styles/css/launch.css">
+    <link rel="stylesheet" href="styles/css/custom/fog.css">
 
   </head>
   <body >
@@ -278,6 +279,9 @@
           </nav>
   				<!-- MAIN CONTENT -->
 				<div ng-view>
+        <canvas id="fog"></canvas>
+        <canvas id="bg"></canvas>
+        <canvas id="brush"></canvas>
           <div class="email-octopus-form-wrapper">
           <h2 class="email-octopus-heading" style="display: none;">Subscribe to MarketingTools</h2>
           <p class="email-octopus-success-message"></p>
@@ -373,6 +377,7 @@
   	<script src="scripts/devexpress-web-14.1/js/dx.chartjs.js"></script>
     <!-- Custom Script -->
     <script src="scripts/xenon-custom.js"></script>
+    <script src="scripts/custom/fog.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <!-- endbuild -->
