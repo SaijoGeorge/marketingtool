@@ -2,6 +2,7 @@
   height: 100vh;
   position: relative;
   overflow: hidden;
+  margin: -30px;
 }
 .fog-container canvas {
   display: block;
@@ -16,8 +17,4 @@
 
 #brush {
   opacity: 0;
-}
-
-.fog-container {
-    margin: -30px;
 }
