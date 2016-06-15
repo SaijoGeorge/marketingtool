@@ -17,3 +17,7 @@
 #brush {
   opacity: 0;
 }
+
+.fog-container {
+    margin: -30px;
+}
