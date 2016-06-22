@@ -253,7 +253,7 @@ var bgi = 'assets/images/mybackground.png';
 new Fog({
     selector: '#fog',
     particle: 'assets/images/fog-particle.png',
-    density: 350,
+    density: 250,
     bgi: bgi
 });
 
