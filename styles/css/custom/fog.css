@@ -18,3 +18,12 @@
 #brush {
   opacity: 0;
 }
+
+.thin-shade {
+  letter-spacing: 0.35rem;
+  color: #F7EB98;
+  text-shadow: -1px 1px 0 #89DFB8,
+              -2px 2px 0 rgba(255,255,255,0.5);
+  text-align: center;
+  font-size: 4rem;
+}
