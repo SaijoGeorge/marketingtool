@@ -1,0 +1,392 @@
+doctype html
+html(lang="en")
+    head
+        include includes/_metadata
+    body
+        nav.c-navbar.o-spacing.js-navbar
+            div.c-navbar__inner.o-base-width
+                a.c-navbar__logo(href="#")
+                    include includes/_logo-svg
+                button.c-navbar__dd
+                    svg: use(xlink:href="images/icons.svg#tools")
+                    span Other tools
+                    ul
+                        li: a(href="#0") Twitter Outreach
+                        li: a(href="#0") Tool
+                        li: a(href="#0") Other Tool
+                button.c-navbar__hamburger.
+                    <svg viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/></svg>
+                ul.c-navbar__links
+                    li: a.c-navbar__link.is-active(href="#0") Social monitoring
+                    li: a.c-navbar__link(href="#0") About
+                    li: a.c-navbar__link(href="#0") FAQ
+                    li: a.c-navbar__link(href="#0") Help
+
+        div.c-upgrade-bar.o-spacing: div.c-upgrade-bar__inner.o-base-width
+            a.c-btn.c-btn--lg.c-btn--red(href="#0") Upgrade to premium account
+            p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor <br> incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam
+
+        header.c-urlbar.o-spacing: div.o-base-width
+            div.c-urlbar__grid
+                div.c-urlbar__section
+                    div.c-switch
+                        div.c-switch__highlight
+                        button(data-value="single") Single URL
+                        button(data-value="bulk") Bulk input
+
+                div.c-urlbar__section.c-urlbar__section--flex.c-urlbar__url
+                    svg.c-urlbar__lock: use(xlink:href="images/icons.svg#lock")
+                    textarea.c-url(rows="1" data-single-placeholder="Enter your Website URL to see the magic!" data-bulk-placeholder="Enter your Website URL to see the magic!\nSeparated by a new line.\nSigned in users gets up to 5 URLs for free.")
+                    button.c-url__btn.c-btn.c-btn--sm.c-btn--red Submit
+
+                div.c-urlbar__section: div.c-actions
+                    div.c-actions__section(data-mode="single")
+                        div.c-actions__content
+                            a.c-btn.c-btn--md.c-btn--blue-dark(href="#0") Download PDF
+                    div.c-actions__section(data-mode="bulk")
+                        div.c-actions__content
+                            a.c-btn.c-btn--md.c-btn--blue-dark.c-actions__wide-btn(href="#0") Download CSV
+                            a.c-btn.c-btn--md.c-btn--blue-dark.c-actions__wide-btn(href="#0") Open in Google Docs
+
+        main.o-spacing: div.o-base-width
+            section.c-section.o-grid: div.o-gutters--25
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--facebook
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#facebook-shares")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.facebook_shares_count 27373
+                            span.c-tile__key Facebook shares
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--google
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#google-plus")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.google_shares_count 12856
+                            span.c-tile__key Google Plus shares
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--stumbleupon
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#stumbleupon")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.stumbleupon_shares_count 547
+                            span.c-tile__key StumbleUpon
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--odnoklassniki
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#odnoklassniki")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.odnoklassniki_shares_count 7511
+                            span.c-tile__key Odnoklassniki
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--facebook
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#facebook-comments")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.facebook_comments_count 121
+                            span.c-tile__key Facebook comments
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--linkedin
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#linkedin")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.linkedin_shares_count 9741
+                            span.c-tile__key LinkedIn shares
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--buffer
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#buffer")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.buffer_shares_count 13300
+                            span.c-tile__key Buffer
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--mailru
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#mailru")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.mailru_shares_count 9241
+                            span.c-tile__key Mail.ru
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--facebook
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#facebook-likes")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.facebook_likes_count 390
+                            span.c-tile__key Facebook likes
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--pinterest
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#pinterest")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.pinterest_shares_count 2832
+                            span.c-tile__key Pinterest
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--reddit
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#reddit")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.reddit_shares_count 10100
+                            span.c-tile__key Reddit
+
+                div.o-grid--1-4.o-grid--1-3-on-1200.o-grid--1-2-on-1000.o-grid--1-1-on-700
+                    div.c-tile.u-color--vkontakte
+                        div.c-tile__icon: svg: use(xlink:href="images/icons.svg#vkontakte")
+                        div.c-tile__content
+                            span.c-tile__value.js-number.vkontakte_shares_count 1490
+                            span.c-tile__key VKontakte
+
+            section.c-section.c-list: ul
+                li.c-list__item
+                    a.c-list__url(href="https://ponyfoo.com/articles/understanding-javascript-async-await" target="_blank") https://ponyfoo.com/articles/understanding-javascript-async-await
+                    ul.c-list__ul
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-shares")
+                            span.c-list__number.js-number 27373
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook comments")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-comments")
+                            span.c-list__number.js-number 121
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook likes")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-likes")
+                            span.c-list__number.js-number 390
+                        li.c-list__li.c-tooltip.u-color--google(data-tooltip="Google Plus shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#google-plus")
+                            span.c-list__number.js-number 12856
+                        li.c-list__li.c-tooltip.u-color--linkedin(data-tooltip="LinkedIn shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#linkedin")
+                            span.c-list__number.js-number 9741
+                        li.c-list__li.c-tooltip.u-color--pinterest(data-tooltip="Pinterest")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#pinterest")
+                            span.c-list__number.js-number 2832
+                        li.c-list__li.c-tooltip.u-color--stumbleupon(data-tooltip="StumbleUpon")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#stumbleupon")
+                            span.c-list__number.js-number 547
+                        li.c-list__li.c-tooltip.u-color--buffer(data-tooltip="Buffer")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#buffer")
+                            span.c-list__number.js-number 13300
+                        li.c-list__li.c-tooltip.u-color--reddit(data-tooltip="Reddit")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#reddit")
+                            span.c-list__number.js-number 10100
+                        li.c-list__li.c-tooltip.u-color--odnoklassniki(data-tooltip="Odnoklassniki")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#odnoklassniki")
+                            span.c-list__number.js-number 7511
+                        li.c-list__li.c-tooltip.u-color--mailru(data-tooltip="Mail.ru")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#mailru")
+                            span.c-list__number.js-number 9241
+                        li.c-list__li.c-tooltip.u-color--vkontakte(data-tooltip="VKontakte")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#vkontakte")
+                            span.c-list__number.js-number 1490
+                li.c-list__item
+                    a.c-list__url(href="https://ponyfoo.com/articles/understanding-javascript-async-await" target="_blank") https://ponyfoo.com/articles/understanding-javascript-async-await
+                    ul.c-list__ul
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-shares")
+                            span.c-list__number.js-number 27373
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook comments")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-comments")
+                            span.c-list__number.js-number 121
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook likes")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-likes")
+                            span.c-list__number.js-number 390
+                        li.c-list__li.c-tooltip.u-color--google(data-tooltip="Google Plus shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#google-plus")
+                            span.c-list__number.js-number 12856
+                        li.c-list__li.c-tooltip.u-color--linkedin(data-tooltip="LinkedIn shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#linkedin")
+                            span.c-list__number.js-number 9741
+                        li.c-list__li.c-tooltip.u-color--pinterest(data-tooltip="Pinterest")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#pinterest")
+                            span.c-list__number.js-number 2832
+                        li.c-list__li.c-tooltip.u-color--stumbleupon(data-tooltip="StumbleUpon")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#stumbleupon")
+                            span.c-list__number.js-number 547
+                        li.c-list__li.c-tooltip.u-color--buffer(data-tooltip="Buffer")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#buffer")
+                            span.c-list__number.js-number 13300
+                        li.c-list__li.c-tooltip.u-color--reddit(data-tooltip="Reddit")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#reddit")
+                            span.c-list__number.js-number 10100
+                        li.c-list__li.c-tooltip.u-color--odnoklassniki(data-tooltip="Odnoklassniki")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#odnoklassniki")
+                            span.c-list__number.js-number 7511
+                        li.c-list__li.c-tooltip.u-color--mailru(data-tooltip="Mail.ru")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#mailru")
+                            span.c-list__number.js-number 9241
+                        li.c-list__li.c-tooltip.u-color--vkontakte(data-tooltip="VKontakte")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#vkontakte")
+                            span.c-list__number.js-number 1490
+                li.c-list__item
+                    a.c-list__url(href="https://ponyfoo.com/articles/understanding-javascript-async-await" target="_blank") https://ponyfoo.com/articles/understanding-javascript-async-await
+                    ul.c-list__ul
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-shares")
+                            span.c-list__number.js-number 27373
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook comments")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-comments")
+                            span.c-list__number.js-number 121
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook likes")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-likes")
+                            span.c-list__number.js-number 390
+                        li.c-list__li.c-tooltip.u-color--google(data-tooltip="Google Plus shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#google-plus")
+                            span.c-list__number.js-number 12856
+                        li.c-list__li.c-tooltip.u-color--linkedin(data-tooltip="LinkedIn shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#linkedin")
+                            span.c-list__number.js-number 9741
+                        li.c-list__li.c-tooltip.u-color--pinterest(data-tooltip="Pinterest")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#pinterest")
+                            span.c-list__number.js-number 2832
+                        li.c-list__li.c-tooltip.u-color--stumbleupon(data-tooltip="StumbleUpon")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#stumbleupon")
+                            span.c-list__number.js-number 547
+                        li.c-list__li.c-tooltip.u-color--buffer(data-tooltip="Buffer")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#buffer")
+                            span.c-list__number.js-number 13300
+                        li.c-list__li.c-tooltip.u-color--reddit(data-tooltip="Reddit")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#reddit")
+                            span.c-list__number.js-number 10100
+                        li.c-list__li.c-tooltip.u-color--odnoklassniki(data-tooltip="Odnoklassniki")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#odnoklassniki")
+                            span.c-list__number.js-number 7511
+                        li.c-list__li.c-tooltip.u-color--mailru(data-tooltip="Mail.ru")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#mailru")
+                            span.c-list__number.js-number 9241
+                        li.c-list__li.c-tooltip.u-color--vkontakte(data-tooltip="VKontakte")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#vkontakte")
+                            span.c-list__number.js-number 1490
+                li.c-list__item
+                    a.c-list__url(href="https://ponyfoo.com/articles/understanding-javascript-async-await" target="_blank") https://ponyfoo.com/articles/understanding-javascript-async-await
+                    ul.c-list__ul
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-shares")
+                            span.c-list__number.js-number 27373
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook comments")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-comments")
+                            span.c-list__number.js-number 121
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook likes")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-likes")
+                            span.c-list__number.js-number 390
+                        li.c-list__li.c-tooltip.u-color--google(data-tooltip="Google Plus shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#google-plus")
+                            span.c-list__number.js-number 12856
+                        li.c-list__li.c-tooltip.u-color--linkedin(data-tooltip="LinkedIn shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#linkedin")
+                            span.c-list__number.js-number 9741
+                        li.c-list__li.c-tooltip.u-color--pinterest(data-tooltip="Pinterest")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#pinterest")
+                            span.c-list__number.js-number 2832
+                        li.c-list__li.c-tooltip.u-color--stumbleupon(data-tooltip="StumbleUpon")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#stumbleupon")
+                            span.c-list__number.js-number 547
+                        li.c-list__li.c-tooltip.u-color--buffer(data-tooltip="Buffer")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#buffer")
+                            span.c-list__number.js-number 13300
+                        li.c-list__li.c-tooltip.u-color--reddit(data-tooltip="Reddit")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#reddit")
+                            span.c-list__number.js-number 10100
+                        li.c-list__li.c-tooltip.u-color--odnoklassniki(data-tooltip="Odnoklassniki")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#odnoklassniki")
+                            span.c-list__number.js-number 7511
+                        li.c-list__li.c-tooltip.u-color--mailru(data-tooltip="Mail.ru")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#mailru")
+                            span.c-list__number.js-number 9241
+                        li.c-list__li.c-tooltip.u-color--vkontakte(data-tooltip="VKontakte")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#vkontakte")
+                            span.c-list__number.js-number 1490
+                li.c-list__item
+                    a.c-list__url(href="https://ponyfoo.com/articles/understanding-javascript-async-await" target="_blank") https://ponyfoo.com/articles/understanding-javascript-async-await
+                    ul.c-list__ul
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-shares")
+                            span.c-list__number.js-number 27373
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook comments")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-comments")
+                            span.c-list__number.js-number 121
+                        li.c-list__li.c-tooltip.u-color--facebook(data-tooltip="Facebook likes")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#facebook-likes")
+                            span.c-list__number.js-number 390
+                        li.c-list__li.c-tooltip.u-color--google(data-tooltip="Google Plus shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#google-plus")
+                            span.c-list__number.js-number 12856
+                        li.c-list__li.c-tooltip.u-color--linkedin(data-tooltip="LinkedIn shares")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#linkedin")
+                            span.c-list__number.js-number 9741
+                        li.c-list__li.c-tooltip.u-color--pinterest(data-tooltip="Pinterest")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#pinterest")
+                            span.c-list__number.js-number 2832
+                        li.c-list__li.c-tooltip.u-color--stumbleupon(data-tooltip="StumbleUpon")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#stumbleupon")
+                            span.c-list__number.js-number 547
+                        li.c-list__li.c-tooltip.u-color--buffer(data-tooltip="Buffer")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#buffer")
+                            span.c-list__number.js-number 13300
+                        li.c-list__li.c-tooltip.u-color--reddit(data-tooltip="Reddit")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#reddit")
+                            span.c-list__number.js-number 10100
+                        li.c-list__li.c-tooltip.u-color--odnoklassniki(data-tooltip="Odnoklassniki")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#odnoklassniki")
+                            span.c-list__number.js-number 7511
+                        li.c-list__li.c-tooltip.u-color--mailru(data-tooltip="Mail.ru")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#mailru")
+                            span.c-list__number.js-number 9241
+                        li.c-list__li.c-tooltip.u-color--vkontakte(data-tooltip="VKontakte")
+                            svg.c-list__icon: use(xlink:href="images/icons.svg#vkontakte")
+                            span.c-list__number.js-number 1490
+
+            section.c-section.c-section--no-apperance.o-grid: div.o-gutters--50
+                div.o-grid--1-3.o-grid--1-1-on-1000.c-section__flex: div.c-section__cell: div
+                    h2.c-chart__title Facebook total: 14
+                    div#fb-chart.c-chart__fb
+
+                div.o-grid--1-3.o-grid--1-1-on-1000.c-section__flex: div.c-section__cell: div
+                    h2.c-chart__title MarketingTool.io Score
+                    div#mt-chart.c-chart__mt
+                    img.c-chart__logo(src="images/logo.png" alt="Logo")
+
+                div.o-grid--1-3.o-grid--1-1-on-1000.c-section__flex: div.c-section__cell: div
+                    h2.c-chart__title All shares
+                    div#all-chart
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h1.c-section__title Expedita Alias Tenetur
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quod, vero facilis ipsa repellendus inventore autem voluptates, suscipit expedita alias tenetur error ex iure sequi aperiam, distinctio officia rerum assumenda!ro nisi velit, sed incidunt cumque quasi, ullam at nam, est dolorem ea expedita dicta.
+                div.o-grid--2-5.o-grid--1-1-on-800
+                    img.c-section__img(src="http://unsplash.it/600/400?random=1" alt="")
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--2-5.o-grid--1-1-on-800.c-section__next-on-800
+                    img.c-section__img(src="http://unsplash.it/600/400?random=2" alt="")
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h1.c-section__title Distinctio Officia Rerum
+                    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Illo illum mollitia nemo tempore veritatis nihil vero nisi velit, sed incidunt cumque quasi, ullam at nam, est dolorem ea expedita dicta. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam quod, vero facilis ipsa repellendus inventore autem voluptates, suscipit expedita alias tenetur error ex iure sequi aperiam, distinctio officia rerum assumenda!ro nisi velit, sed incidunt cumque quasi, ullam at nam, est dolorem ea expedita dicta.
+
+        footer.c-footer
+            include includes/_logo-svg
+
+        script(src="js/vendor/d3.v3.min.js")
+        script(src="js/vendor/c3.min.js")
+
+        script(src="js/apiGateway-js-sdk/lib/axios/dist/axios.standalone.js")
+        script(src="js/apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js")
+        script(src="js/apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js")
+        script(src="js/apiGateway-js-sdk/lib/CryptoJS/components/hmac.js")
+        script(src="js/apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js")
+        script(src="js/apiGateway-js-sdk/lib/url-template/url-template.js")
+        script(src="js/apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js")
+        script(src="js/apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js")
+        script(src="js/apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js")
+        script(src="js/apiGateway-js-sdk/lib/apiGatewayCore/utils.js")
+        script(src="js/apiGateway-js-sdk/apigClient.js")
+
+        | <!-- build:js -->
+        script(src="js/QueryParams.js")
+        script(src="js/State.js")
+        script(src="js/Switch.js")
+        script(src="js/URLResult.js")
+        script(src="js/URLInput.js")
+        script(src="js/BulkInput.js")
+        script(src="js/ActionButtons.js")
+        script(src="js/AnimateNumbers.js")
+        script(src="js/MenuBtn.js")
+        script(src="js/charts.js")
+        script(src="script.js")
+        | <!-- endbuild -->

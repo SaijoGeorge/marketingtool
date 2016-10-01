@@ -1,0 +1,38 @@
+.c-btn
+    display: inline-block
+    line-height: 1
+    font-weight: bold
+    text-align: center
+    border-radius: 100px
+    transition: .2s
+    cursor: pointer
+
+    &:active
+        transition: 0s
+
+    &--sm
+        padding: em(11px, 14px) em(25px, 14px)
+        font-size: rem(14px)
+
+    &--md
+        padding: em(14px, 14px) em(28px, 14px)
+        font-size: rem(14px)
+
+    &--lg
+        padding: em(14px, 14px) em(28px, 14px)
+        font-size: rem(16px)
+
+    &--red
+        background: $red
+        color: white
+
+    &--blue-dark
+        background: $blue--dark
+        color: white
+
+        // &:hover,
+        // &:focus
+        //     background: $blue
+
+        // &:active
+        //     background: darken($blue--dark, 10%)

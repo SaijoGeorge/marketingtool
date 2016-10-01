@@ -1,0 +1,25 @@
+.c-actions
+    $gutter: rem(10px)
+
+    margin: -$gutter
+
+    &__section
+        display: none
+        margin: $gutter
+
+        &.is-visible
+            display: block
+
+    &__content
+        transition: .3s
+
+    &__wide-btn
+        display: block
+        text-align: center
+
+        &:not(:last-of-type)
+            margin-bottom: em(10px)
+
+    .c-btn
+        width: rem(190px)
+        white-space: nowrap

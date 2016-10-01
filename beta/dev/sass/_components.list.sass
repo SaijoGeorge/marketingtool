@@ -1,0 +1,64 @@
+.c-list
+    font-weight: normal
+
+    &__item
+        border-radius: 5px
+
+        &:not(:last-of-type)
+            margin-bottom: rem(25px)
+
+        +max(1250px)
+            overflow: hidden
+
+    &__url
+        display: block
+        padding: em(15px) em(20px)
+        line-height: 1.3
+        color: white
+        word-wrap: break-word
+        border-radius: 5px 5px 0 0
+        background: $blue
+
+    &__ul
+        display: flex
+        flex-wrap: wrap
+        margin: 1px -1px -1px -1px
+
+    &__li
+        flex-basis: 50%
+        display: flex
+        justify-content: center
+        padding: em(15px, 18px) em(12px, 18px)
+        font-size: rem(18px)
+        color: white
+        border: solid 1px
+        cursor: help
+
+        +min(450px)
+            flex-basis: 33.333%
+
+        +min(650px)
+            flex-basis: 25%
+
+        +min(800px)
+            flex-basis: 16.666%
+
+        +min(1250px)
+            flex: 1
+
+            &:first-of-type
+                border-radius: 0 0 0 5px
+
+            &:last-of-type
+                border-radius: 0 0 5px 0
+
+    &__icon
+        width: 1em
+        height: 1em
+        margin-right: rem(5px)
+        fill: currentColor
+        opacity: .6
+
+    &__number
+        line-height: 1
+

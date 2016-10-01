@@ -1,0 +1,65 @@
+$widths: (
+    '1-8': 12.5%,
+    '1-6': 16.666666%,
+    '1-5': 20%,
+    '1-4': 25%,
+    '1-3': 33.333333%,
+    '2-5': 40%,
+    '1-2': 50%,
+    '3-5': 60%,
+    '2-3': 66.666666%,
+    '3-4': 75%,
+    '4-5': 80%,
+    '1-1': 100%,
+) !default;
+
+$flex-breakpoints: 1200, 1000, 900, 800, 700, 600, 500 !default;
+
+$gutters: 10, 15, 20, 25, 30, 40, 50, 80 !default;
+
+@mixin grid($bp: false) {
+    @each $name, $width in $widths {
+        .o-grid--#{$name + if($bp, -on-#{$bp}, '')} { // .o-grid--1-2-on-500
+            width: $width;
+        }
+    }
+}
+
+@mixin gutters($bp: false) {
+    @each $size in $gutters {
+        .o-gutters--#{$size + if($bp, -on-#{$bp}, '')} { // .o-gutters--10-on-500
+            margin: - $size / 2 + px;
+
+            > * {
+                padding: $size / 2 + px;
+            }
+        }
+    }
+}
+
+.o-grid {
+    &--overflow-hidden { overflow: hidden }
+    &--center,  &--center  > [class*=gutters] { justify-content: center }
+    &--justify, &--justify > [class*=gutters] { justify-content: space-between }
+    &--middle,  &--middle  > [class*=gutters] { align-items: center }
+}
+
+[class*=gutters] { flex: 1 }
+
+.o-grid,
+[class*=gutters] {
+    display: flex;
+    flex-wrap: wrap;
+
+    > * { box-sizing: border-box }
+}
+
+@include grid();
+@include gutters();
+
+@each $width in $flex-breakpoints {
+    @media (max-width: #{$width}px) {
+        @include grid($width);
+        @include gutters($width);
+    }
+}

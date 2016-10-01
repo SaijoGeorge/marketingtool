@@ -1,0 +1,70 @@
+.c-urlbar
+    $gutter: rem(12.5px)
+
+    position: relative
+    padding: rem(25px)
+    background: $blue
+    overflow: hidden
+
+    &::after
+        content: ''
+        display: block
+        width: 120%
+        height: 100%
+        position: absolute
+        top: 0
+        left: -10%
+        background: linear-gradient(-90deg, $blue 49%, rgba($blue, .7) 49%) center / 35px 100px
+        transform: skew(-20deg)
+        opacity: 0
+        transition: .3s
+        visibility: hidden
+
+    &__lock
+        width: rem(60px)
+        height: rem(60px)
+        position: absolute
+        z-index: 1
+        left: calc(50% - #{ rem(30px) })
+        top: calc(50% - #{ rem(30px) })
+        fill: $red
+        stroke: white
+        stroke-width: 1
+        opacity: 0
+        transition: .3s
+        visibility: hidden
+
+    &.is-inactive &__lock
+        opacity: 1
+        visibility: visible
+
+    &.is-inactive
+        overflow: hidden
+        &::after
+            opacity: .5
+            visibility: visible
+
+        .c-switch
+            position: relative
+            z-index: 1
+
+    &__grid
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        margin: -$gutter
+
+    &__section
+        margin: $gutter
+
+        &--flex
+            flex: 1 100%
+            order: -1
+            +min(940px)
+                flex: 1
+                order: 0
+
+    &__url
+        display: flex
+        position: relative

@@ -1,0 +1,52 @@
+@function rem($px)
+    @return ($px / 16px) * 1rem
+
+@function em($px, $base: 16px)
+    @return ($px / $base) * 1em
+
+$breakpoints: (xxs: 500, xs: 600, sm: 768, md: 850, lg: 970, xl: 1024, xxl: 1200)
+
+@function bp-val($val)
+    @return if(map-has-key($breakpoints, $val), map-get($breakpoints, $val), $val)
+
+=bp($max-or-min, $width, $orient: false)
+    $width: '(#{ $max-or-min }-width: #{ em(bp-val($width)) })'
+    $orient: if($orient, 'and (orientation: #{ $orient })', '')
+    @media #{ $width $orient }
+        @content
+
+=max($width, $orient: false)
+    +bp(max, $width, $orient)
+        @content
+
+=min($width, $orient: false)
+    +bp(min, bp-val($width) + 1, $orient)
+        @content
+
+=in($min, $max, $orient: false)
+    $widths: '(min-width: #{ em(bp-val($min)) }) and (max-width: #{ em(bp-val($max)) })'
+    $orient: if($orient, 'and (orientation: #{ $orient })', '')
+    @media #{ $widths $orient }
+        @content
+
+=placeholder-style()
+    &::-webkit-input-placeholder // Chrome, Safari, Opera
+        @content
+    &::-moz-placeholder // Firefox
+        @content
+    &:-ms-input-placeholder // IE
+        @content
+    &::-ms-input-placeholder // Edge
+        @content
+    &::placeholder // Standard
+        @content
+
+=selection($text-color: white, $bg-color: black)
+    *::selection
+        color: $text-color
+        -webkit-text-fill-color: $text-color
+        background-color: $bg-color
+    *::-moz-selection
+        color: $text-color
+        -webkit-text-fill-color: $text-color
+        background-color: $bg-color

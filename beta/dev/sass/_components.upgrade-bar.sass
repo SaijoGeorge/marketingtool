@@ -1,0 +1,31 @@
+.c-upgrade-bar
+    max-height: 0
+    line-height: 1.5
+    color: #7793a0
+    background: #e6f7ff
+    transition: .3s
+    overflow: hidden
+    +max(1000px)
+        text-align: center
+
+        br
+            display: none
+
+    &.is-active
+        max-height: 120px
+
+        +max(1000px)
+            max-height: 220px
+
+    &__inner
+        display: flex
+        align-items: center
+        padding: rem(25px) 0
+        +max(1000px)
+            flex-wrap: wrap
+            justify-content: center
+
+    .c-btn
+        margin-right: em(25px)
+        +max(1000px)
+            margin: 0 0 em(25px)

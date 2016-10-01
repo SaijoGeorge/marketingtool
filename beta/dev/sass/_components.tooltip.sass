@@ -1,0 +1,55 @@
+.c-tooltip
+    $tooltip-elements: before-and-after, before
+    $space: 5px
+
+    position: relative
+    text-indent: 0 !important
+    overflow: visible // IE...
+
+    &:not([data-tooltip])
+        &:before,
+        &:after
+            content: none
+
+    &:before, &:after
+        position: absolute
+        right: 50%
+        bottom: 100%
+        z-index: -1
+        pointer-events: none
+        opacity: 0
+        transition: .25s
+
+    &:before
+        content: ''
+        margin-right: -6px
+        margin-bottom: $space
+        color: #222
+        border-style: solid
+        border-width: 6px 6px 0 6px
+        border-color: currentColor transparent transparent transparent
+
+    &:after
+        content: attr(data-tooltip)
+        box-sizing: border-box
+        padding: 7px 10px
+        margin-bottom: $space * 2
+        font-weight: 400
+        font-size: rem(14px)
+        line-height: 1.4
+        white-space: nowrap
+        color: white
+        background: #222
+        border-radius: 3px
+        transform: translateX(50%)
+
+    &:hover, &:focus
+        z-index: z(tooltip)
+
+        &:before, &:after
+            z-index: index($tooltip-elements, before-and-after)
+            pointer-events: all
+            opacity: 1
+
+        &:before
+            z-index: index($tooltip-elements, before)

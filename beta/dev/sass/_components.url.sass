@@ -1,0 +1,47 @@
+.c-url
+    flex: 1
+    height: rem(100px)
+    padding: rem(11.5px) rem(18px) rem(51px) rem(18px)
+    font-family: inherit
+    font-size: rem(16px)
+    color: $blue--dark
+    border: none
+    border-radius: 10px 10px 21px 21px
+    transition: .3s
+    resize: none
+    overflow: hidden
+
+    +min(520px)
+        height: rem(42px)
+        padding: rem(11.5px) rem(120px) rem(11.5px) rem(18px)
+        border-radius: 21px
+
+    .is-bulk &
+        height: rem(158px)
+        overflow: auto
+        +min(520px)
+            height: rem(110px)
+            border-radius: 10px
+
+    +placeholder-style
+        color: #bbb
+        opacity: 1
+
+    &__btn
+        width: calc(100% - 6px)
+        position: absolute
+        right: 3px
+        bottom: 3px
+        transition: .3s
+
+        +min(520px)
+            width: auto
+
+        span
+            font-weight: 300
+
+    .is-bulk &__btn
+        +min(520px)
+            bottom: 50%
+            right: rem(25px)
+            transform: translateY(50%)

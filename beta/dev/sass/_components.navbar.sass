@@ -1,0 +1,188 @@
+.c-navbar
+    $height: rem(60px)
+    $space: em(17px)
+
+    height: $height
+    position: relative
+    z-index: 2
+    color: rgba(white, .6)
+    background: $blue--dark
+
+    &__inner
+        display: flex
+        position: relative
+        align-items: center
+        height: inherit
+
+    &__hamburger
+        display: none
+        margin-left: auto
+        margin-right: em(-10px)
+        +max(500px)
+            margin-left: initial
+        +max(768px)
+            display: block
+
+        svg
+            width:  32px
+            height: 32px
+            float: right
+            fill: white
+
+    &__links
+        display: flex
+        align-items: center
+        margin-left: auto
+        margin-right: -$space
+        transform-origin: center top
+        white-space: nowrap
+        transition: .25s
+        +max(768px)
+            flex-direction: column
+            position: absolute
+            top: 100%
+            right: 0
+            margin-right: initial
+            padding: em(10px) 0
+            visibility: hidden
+            color: rgba(white, .6)
+            transform-origin: center top
+            transform: scaleY(.8)
+            background: #222
+            box-shadow: 0 2px 20px rgba(black, .2)
+            border-radius: 0 0 5px 5px
+            opacity: 0
+            transition: .3s
+
+            li
+                width: 100%
+                white-space: nowrap
+
+            a
+                display: inline-block
+                width: 100%
+                margin: 0
+                padding: 0 em(40px)
+                line-height: em(45px)
+                transition: .2s
+
+                &:hover
+                    color: white
+                    background: #444
+
+    +min(768px)
+        &__links:hover
+            visibility: visible
+            opacity: 1
+            transform: none
+
+    +max(768px)
+        .is-opened
+            > ul, + ul
+                visibility: visible
+                opacity: 1
+                transform: none
+
+    &__logo
+        fill: white
+
+    &__link
+        display: inline-block
+        margin: 0 $space
+        line-height: $height
+        transition: .2s
+
+        &.is-active
+            font-weight: bold
+            +min(768px)
+                box-shadow: inset 0 -3px
+
+        &.is-active,
+        &:hover,
+        &:focus
+            color: white
+
+        &:active
+            color: rgba(white, .4)
+            transition: 0s
+
+    &__hamburger,
+    &__dd
+        padding: em(10px)
+        align-self: stretch
+
+    &__dd
+        display: flex
+        align-items: center
+        position: relative
+        margin-left: $space * 2
+        font-size: inherit
+        text-align: left
+        transition: .2s
+
+        +max(500px)
+            margin-left: auto
+            padding: 0 rem(20px)
+
+        &:hover,
+        &:focus
+            color: white
+
+        svg
+            width: em(18px)
+            height: em(18px)
+            fill: currentColor
+
+            +max(1000px)
+                width: em(20px)
+                height: em(20px)
+
+            +min(500px)
+                margin-right: em(10px)
+
+            +max(500px)
+                fill: white
+
+        span
+            +max(500px)
+                display: none
+
+        ul
+            position: absolute
+            top: 100%
+            left: 0
+            +max(500px)
+                left: auto
+                right: 0
+            padding: em(10px) 0
+            visibility: hidden
+            color: rgba(white, .6)
+            transform-origin: center top
+            transform: scaleY(.8)
+            background: #222
+            box-shadow: 0 2px 20px rgba(black, .2)
+            border-radius: 0 0 5px 5px
+            opacity: 0
+            transition: .3s
+
+        li
+            white-space: nowrap
+            line-height: em(45px)
+
+        a
+            display: inline-block
+            width: 100%
+            padding: 0 em(40px)
+            transition: .2s
+
+            &:hover
+                color: white
+                background: #444
+
+        +min(768px)
+            &:hover,
+            &:focus
+                ul
+                    visibility: visible
+                    transform: none
+                    opacity: 1
