@@ -48,6 +48,11 @@ gulp.task('js:babel', () => {
         .pipe(gulp.dest('dist/'))
 })
 
+gulp.task('js:vendor', () => {
+    return gulp.src(['dev/js/vendor/*.js'])
+        .pipe(gulp.dest('dist/js/vendor/'))
+})
+
 gulp.task('js:replace', () => {
     return gulp.src('dist/*.html')
         .pipe($.htmlReplace({
@@ -56,7 +61,7 @@ gulp.task('js:replace', () => {
         .pipe(gulp.dest('dist/'))
 })
 
-gulp.task('js:dist', ['js:babel', 'js:replace'], () => {
+gulp.task('js:dist', ['js:babel', 'js:vendor', 'js:replace'], () => {
     return gulp.src([
             'dist/js/QueryParams.js',
             'dist/js/State.js',
