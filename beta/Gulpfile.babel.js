@@ -80,6 +80,11 @@ gulp.task('js:dist', ['js:babel', 'js:vendor', 'js:replace'], () => {
         .pipe(gulp.dest('dist/'))
 })
 
+gulp.task('assets:dist', ['clean'], () => {
+    gulp.src('dev/images/**/*.*')
+        .pipe(gulp.dest('dist/images'))
+})
+
 gulp.task('clean', cb => {
     return del([
         '.tmp'
@@ -107,4 +112,4 @@ gulp.task('serve:build', () => {
     })
 })
 
-gulp.task('build', ['jade:dist', 'sass:dist', 'js:dist'])
+gulp.task('build', ['jade:dist', 'sass:dist', 'js:dist', 'assets:dist'])
