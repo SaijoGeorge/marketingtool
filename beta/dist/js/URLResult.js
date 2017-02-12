@@ -22,6 +22,7 @@ var URLResult = (function () {
     this.vkontakte_shares_count = document.querySelector('.vkontakte_shares_count');
     this.twitter_shares_count = document.querySelector('.twitter_count');
 
+    this.facebookChartHeader = document.querySelector('#fb-chart-Header');
     this.bulkSection = document.querySelector('#bulk-section');
 
     this._getMarketingScore = this._getMarketingScore.bind(this);
@@ -85,6 +86,8 @@ var URLResult = (function () {
       this.vkontakte_shares_count.innerHTML = data.vkontakte;
       this.twitter_shares_count.innerHTML = data.twitter;
 
+      var fbTotal = parseInt(data.facebook_share) + parseInt(data.facebook_comment) + parseInt(data.facebook_likes);
+      this.facebookChartHeader.innerHTML = 'Facebook Total: ' + fbTotal;
       fbChart([data.facebook_share, data.facebook_comment, data.facebook_likes]);
       allChart([data.facebook_share, data.facebook_comment, data.facebook_likes, data.google, data.linkedin, data.pinterest, data.stumbleupon, data.buffer, data.reddit, data.odnoklassniki, data.mail_ru, data.vkontakte, data.twitter]);
       mtChart(this._getMarketingScore(data));

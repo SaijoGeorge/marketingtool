@@ -16,6 +16,7 @@ class URLResult {
         this.vkontakte_shares_count = document.querySelector('.vkontakte_shares_count')
         this.twitter_shares_count = document.querySelector('.twitter_count')
 
+        this.facebookChartHeader = document.querySelector('#fb-chart-Header')
         this.bulkSection = document.querySelector('#bulk-section')
 
         this._getMarketingScore = this._getMarketingScore.bind(this)
@@ -76,6 +77,8 @@ class URLResult {
       this.vkontakte_shares_count.innerHTML = data.vkontakte
       this.twitter_shares_count.innerHTML = data.twitter
 
+      let fbTotal = parseInt(data.facebook_share) + parseInt(data.facebook_comment) + parseInt(data.facebook_likes)
+      this.facebookChartHeader.innerHTML = 'Facebook Total: ' + fbTotal
       fbChart([data.facebook_share, data.facebook_comment, data.facebook_likes]);
       allChart([
         data.facebook_share,

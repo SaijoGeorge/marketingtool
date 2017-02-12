@@ -62,6 +62,8 @@ var URLInput = (function () {
     }, {
         key: '_onSingleInputValidate',
         value: function _onSingleInputValidate() {
+
+            var website = this.element.value;
             var err = validate({ website: this.element.value }, { website: { url: true } });
             if (err != undefined) {
                 swal("Invalid Input", "Please verify input URL : should start with http OR https!", "error");
