@@ -21,6 +21,7 @@ class URLInput {
         this._activateInput = this._activateInput.bind(this)
         this._downloadPDF = this._downloadPDF.bind(this)
         this._downloadCSV = this._downloadCSV.bind(this)
+        this._resolveUrl = this._resolveUrl.bind(this)
         //this.convertArrayOfObjectsToCSV = this.convertArrayOfObjectsToCSV.bind(this)
 
         this._manageNewLines()
@@ -50,10 +51,18 @@ class URLInput {
         this._setBtnState()
     }
 
-    _onSingleInputValidate(){
+    _resolveUrl(url){
+        let newUrl = url
+        if (!/^https?:\/\//i.test(url)) {
+            newUrl = 'http://' + url
+        } else{
+            newUrl = url
+        }
+        return newUrl;
+    }
 
-      let website = this.element.value
-      var err = validate({website: this.element.value}, {website: {url: true}})
+    _onSingleInputValidate(website){
+      var err = validate({website: website}, {website: {url: true}})
       if(err != undefined){
         swal("Invalid Input", "Please verify input URL : should start with http OR https!", "error")
         return false
@@ -87,12 +96,14 @@ class URLInput {
         var apigClient = apigClientFactory.newClient(config);
 
         if(context.mode == "single"){
-          var valid = context._onSingleInputValidate()
+          let website = this._resolveUrl(this.element.value)
+
+          var valid = context._onSingleInputValidate(website)
           if(!valid){
             context._activateInput()
             return
           }
-          apigClient.urlSharecountGet({"url": this.element.value}, {})
+          apigClient.urlSharecountGet({"url": website}, {})
               .then(function(result){
                   var url_result = new URLResult();
                   url_result._updateCount(result.data);
