@@ -57,7 +57,7 @@ class URLResult {
           score = score + 0
         }
 
-        return score
+        return Math.round(score)
     }
 
     _updateCount(data){

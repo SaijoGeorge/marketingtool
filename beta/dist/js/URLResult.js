@@ -65,7 +65,7 @@ var URLResult = (function () {
         score = score + 0;
       }
 
-      return score;
+      return Math.round(score);
     }
   }, {
     key: '_updateCount',

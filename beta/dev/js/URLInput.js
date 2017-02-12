@@ -3,6 +3,7 @@
 class URLInput {
     constructor() {
         this.mode = 'single'
+        this.api_gateway_key = 'qQX1Vd3Z3f1MCbJrcMBtc2h5dwx82CO8efTgx993'
         this.element = document.querySelector('.c-url')
         this.section = this.element.parentElement
         this.btn = document.querySelector('.c-url__btn')
@@ -77,7 +78,11 @@ class URLInput {
     _onSubmit(){
         var context = this
         context._inactivateInput()
-        var apigClient = apigClientFactory.newClient();
+        var config = {
+            apiKey: this.api_gateway_key
+        }
+
+        var apigClient = apigClientFactory.newClient(config);
 
         if(context.mode == "single"){
           var valid = context._onSingleInputValidate()
