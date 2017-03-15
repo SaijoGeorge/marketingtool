@@ -96,7 +96,7 @@ class URLInput {
         var apigClient = apigClientFactory.newClient(config);
 
         if(context.mode == "single"){
-          let website = this._resolveUrl(this.element.value)
+          let website = this._resolveUrl(this.element.value.trim())
 
           var valid = context._onSingleInputValidate(website)
           if(!valid){

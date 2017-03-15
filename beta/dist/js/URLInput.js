@@ -110,7 +110,7 @@ var URLInput = (function () {
             var apigClient = apigClientFactory.newClient(config);
 
             if (context.mode == "single") {
-                var website = this._resolveUrl(this.element.value);
+                var website = this._resolveUrl(this.element.value.trim());
 
                 var valid = context._onSingleInputValidate(website);
                 if (!valid) {
