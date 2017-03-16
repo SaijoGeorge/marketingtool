@@ -1,0 +1,71 @@
+doctype html
+html(lang="en")
+    head
+        include includes/_metadata
+    body
+        nav.c-navbar.o-spacing.js-navbar
+            div.c-navbar__inner.o-base-width
+                a.c-navbar__logo(href="#")
+                    include includes/_logo-svg
+                button.c-navbar__dd
+                    svg: use(xlink:href="images/icons.svg#tools")
+                    span Other tools
+                    ul
+                        li: a(href="#0") Twitter Outreach
+                        li: a(href="#0") Tool
+                        li: a(href="#0") Other Tool
+                button.c-navbar__hamburger.
+                    <svg viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z"/></svg>
+                ul.c-navbar__links
+                    li: a.c-navbar__link(href="socialmediamonitoring.html") Social monitoring
+                    li: a.c-navbar__link.is-active(href="aboutus.html") About
+                    li: a#login.c-navbar__link.c-login-btn(href="#Login") Login
+                    li: a#logout.c-navbar__link.c-logout-btn(href="#Logout") Logout
+                    li: a.c-navbar__link(href="#0") Help
+
+        main.o-spacing: div.o-base-width
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h2.c-section__title Social Media Monitoring
+                    p This tool will allow you to specify a URL and it will tell you how many times it was shared on various social media sites like LinkedIn, Pinterest, Google+, Facebook, VK and more. There is a bulk URL importer so you can grab social media stats for multiple URLs in one go.
+                div.o-grid--2-5.o-grid--1-1-on-800
+                    img.c-section__img(src="http://unsplash.it/600/400?random=1" alt="")
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--2-5.o-grid--1-1-on-800.c-section__next-on-800
+                    img.c-section__img(src="images/social-stats.gif" alt="social-stats")
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h2.c-section__title Our Data Source
+                    p We get the data from the official APIs from these services. The only exception is twitter, we get the data for this from newsharecounts.com.
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h2.c-section__title Single vs Multi URL
+                    p Wether you want to pull the social stats for a single URL or pull the stats for multiple URLs at once, you can do it using this tool.
+                div.o-grid--2-5.o-grid--1-1-on-800
+                    img.c-section__img(src="images/single-bulk.gif" alt="single-bulk")
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--2-5.o-grid--1-1-on-800.c-section__next-on-800
+                    img.c-section__img(src="images/pdf-csv.gif" alt="pdf-csv")
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h2.c-section__title Download the Data
+                    p You can download the report in PDF format for individual URLs and for multiple URLs the data is available to be donloaded in CSV format or imported into Google docs.
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h2.c-section__title MarketingTool Score
+                    p Our own take on how polular the URL is in various social media sites.
+                div.o-grid--2-5.o-grid--1-1-on-800
+                    img.c-section__img(src="images/our-score.gif" alt="our-score")
+
+            section.c-section.c-section--text.o-grid.o-grid--middle: div.o-gutters--80.o-gutters--25-on-800
+                div.o-grid--2-5.o-grid--1-1-on-800.c-section__next-on-800
+                    img.c-section__img(src="images/stats.gif" alt="stats")
+                div.o-grid--3-5.o-grid--1-1-on-800
+                    h2.c-section__title Social Media Engagement and Analytics
+                    p You can easily see how much social engagement you have. You can also see the total share of shares. When you click on any of the items and induvidually enable or disable them.              
+
+        footer.c-footer
+            include includes/_logo-svg

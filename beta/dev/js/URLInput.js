@@ -70,8 +70,8 @@ class URLInput {
       return true
     }
 
-    _onBulkInputValidate(){
-      var inputArray = this.element.value.trim().split('\n')
+    _onBulkInputValidate(bulkUrlInputList){
+      var inputArray = bulkUrlInputList
       if(inputArray.length > 10){
         swal("Too many URLs", "Please enter maximum 10 URL!", "error")
         return false
@@ -84,6 +84,14 @@ class URLInput {
         }
       }
       return true
+    }
+
+    _deDuplicateBulkInput(bulkUrlInputList){
+        var inputArray = bulkUrlInputList
+        var deDupedArray = inputArray.filter(function(elem, index, self) {
+            return index == self.indexOf(elem);
+        })
+        return deDupedArray
     }
 
     _onSubmit(){
@@ -117,14 +125,17 @@ class URLInput {
               });
 
         } else if(this.mode == "bulk") {
-          var valid = context._onBulkInputValidate()
+        var bulkUrlInputList = this.element.value.trim().split('\n')
+        var deDupedInput = context._deDuplicateBulkInput(bulkUrlInputList)
+        var valid = context._onBulkInputValidate(deDupedInput)
           if(!valid){
             context._activateInput()
             return
           }
+
           apigClient.bulkUrlsSharecountPost({
             "Authorization": "Bearer " + localStorage.getItem('id_token')
-          }, {"urls": this.element.value.trim().split('\n')})
+          }, {"urls": deDupedInput})
               .then(function(result){
                   var url_result = new URLResult();
                   url_result._updateBulkCount(result.data);

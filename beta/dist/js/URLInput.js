@@ -83,8 +83,8 @@ var URLInput = (function () {
         }
     }, {
         key: '_onBulkInputValidate',
-        value: function _onBulkInputValidate() {
-            var inputArray = this.element.value.trim().split('\n');
+        value: function _onBulkInputValidate(bulkUrlInputList) {
+            var inputArray = bulkUrlInputList;
             if (inputArray.length > 10) {
                 swal("Too many URLs", "Please enter maximum 10 URL!", "error");
                 return false;
@@ -97,6 +97,15 @@ var URLInput = (function () {
                 }
             }
             return true;
+        }
+    }, {
+        key: '_deDuplicateBulkInput',
+        value: function _deDuplicateBulkInput(bulkUrlInputList) {
+            var inputArray = bulkUrlInputList;
+            var deDupedArray = inputArray.filter(function (elem, index, self) {
+                return index == self.indexOf(elem);
+            });
+            return deDupedArray;
         }
     }, {
         key: '_onSubmit',
@@ -129,14 +138,17 @@ var URLInput = (function () {
                     //This is where you would put an error callback
                 });
             } else if (this.mode == "bulk") {
-                    var valid = context._onBulkInputValidate();
+                    var bulkUrlInputList = this.element.value.trim().split('\n');
+                    var deDupedInput = context._deDuplicateBulkInput(bulkUrlInputList);
+                    var valid = context._onBulkInputValidate(deDupedInput);
                     if (!valid) {
                         context._activateInput();
                         return;
                     }
+
                     apigClient.bulkUrlsSharecountPost({
                         "Authorization": "Bearer " + localStorage.getItem('id_token')
-                    }, { "urls": this.element.value.trim().split('\n') }).then(function (result) {
+                    }, { "urls": deDupedInput }).then(function (result) {
                         var url_result = new URLResult();
                         url_result._updateBulkCount(result.data);
                         context.bulkResult = result.data;
