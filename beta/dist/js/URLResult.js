@@ -154,15 +154,15 @@ var URLResult = (function () {
       childFacebookToolTip.value = tooltip;
       childFacebook.setAttributeNode(childFacebookToolTip);
       childFacebook.classList.add('c-list__li', 'c-tooltip', color); //u-color--facebook
-      var childFacebookSvg = document.createElement('svg');
+
+      var svgns = 'http://www.w3.org/2000/svg';
+      var childFacebookSvg = document.createElementNS(svgns, 'svg');
       childFacebookSvg.classList.add('c-list__icon');
-      var childFacebookUse = document.createElement('use');
-      //var childFacebookUseXlink= document.createAttributeNS('http://www.w3.org/1999/xlink', 'xlink')
-      //childFacebookUseXlink.value = 'testing'
-      var childFacebookUseHref = document.createAttributeNS('http://www.w3.org/1999/xlink', 'href');
-      childFacebookUseHref.value = svg; //'images/icons.svg#facebook-shares'
-      //childFacebookUse.setAttributeNode(childFacebookUseXlink);
-      childFacebookUse.setAttributeNode(childFacebookUseHref);
+
+      var childFacebookUse = document.createElementNS(svgns, 'use');
+
+      var xlinkns = 'http://www.w3.org/1999/xlink';
+      childFacebookUse.setAttributeNS(xlinkns, 'xlink:href', svg);
       var childFacebookSpan = document.createElement('span');
       childFacebookSpan.classList.add('c-list__number', 'js-number');
       var childFacebookSpanText = document.createTextNode(count);
